@@ -9,6 +9,8 @@ def check_topic_owner(owner,user):
     if owner != user:
         raise Http404
 
+
+
 def index(request):
     """Home page"""
     return render(request,'learning_logs/index.html')
@@ -50,6 +52,7 @@ def new_entry(request,topic_id):
     """New entry"""
     topic = Topic.objects.get(id=topic_id)
     check_topic_owner(topic.owner,request.user)
+    
     if request.method != 'POST':
         form = EntryForm()
     else:
@@ -69,7 +72,6 @@ def edit_entry(request,entry_id):
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
     check_topic_owner(topic.owner,request.user)
-    
     if request.method != 'POST':
         form = EntryForm(instance=entry)
 

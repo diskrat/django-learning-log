@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     # Our
     'learning_logs',
     'accounts',
+    # Them
+    'django_bootstrap5',
     # Not Ours
     'django.contrib.admin',
     'django.contrib.auth',
@@ -130,3 +132,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'learning_logs:index'
 LOGOUT_REDIRECT_URL = 'learning_logs:index'
 LOGIN_URL = 'accounts:login'
+
